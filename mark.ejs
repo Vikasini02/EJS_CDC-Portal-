@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="../public/css/mark.css">
+</head>
+<body>
+    <h3>MARKSHEET</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Rollno</th>
+            <th>Date of Exam</th>
+            <th>M1</th>
+            <th>M2</th>
+            <th>M3</th>
+        </tr>
+        <% if(userData.length !=0){ %>
+            <% var i=1; %>
+            <% userData.forEach(function(results){ %>
+        <tr>
+            <td><%=results.name%></td>
+            <td><%=results.rollno%></td>
+            <% var datemonth=results.dateofexam.getMonth()+1 %>
+            <td><%= results.dateofexam.getDate()+"-"+datemonth+"-"+results.dateofexam.getFullYear() %></td>
+            <td><%=results.m1 %></td>
+            <td><%=results.m2 %></td>
+            <td><%=results.m3 %></td>
+        </tr>
+        <% }); %>
+        <% } else{ %>
+        <tr>
+            <td colspan="6">No data found</td>
+        </tr>
+        <% } %> 
+    </table>
+</body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="../public/css/mark.css">
+</head>
+<body>
+    <h3>Products</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Prodname</th>
+            <th>Brand</th>
+            <th>Price</th>
+        </tr>
+        <% if(userData.length !=0){%>
+        <%var i=1;%>
+        <%userData.forEach(function(data){%>
+        <tr>
+            <td><%=data.id%></td>
+            <td><%=data.prodname%></td>
+            <td><%=data.brand%></td>
+            <td><%=data.price%></td>
+        </tr>
+        <% i++;}) %>
+        <% } else{ %>
+         <tr>
+             <td colspan="4">No records</td>
+         </tr>
+         <% } %>
+    </table>
+    </body>
+    </html>

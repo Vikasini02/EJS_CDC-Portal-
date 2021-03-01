@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="../public/css/mark.css">
+</head>
+<body>
+    <h3>Temperature</h3>
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>High</th>
+            <th>Low</th>
+        </tr> 
+        <% if(userData.length !=0){%>
+            <%var i=1;%>
+            <%userData.forEach(function(data){%>
+            <tr>  
+                <td><%= data.country%></td>
+                <td><%= data.high%></td>
+                <td><%= data.low%></td>
+            </tr>
+            <% i++;}) %>
+            <% } else{ %>
+             <tr>
+                 <td colspan="3">No records</td>
+             </tr>
+             <% } %>
+        </table>
+        </body>
+        </html> 
